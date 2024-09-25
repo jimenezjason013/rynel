@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caesar Cipher Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        nav {
+            background: #343a40;
+            color: #fff;
+            padding: 15px;
+            width: 250px;
+            height: 100vh; /* Full height */
+            overflow-y: auto; /* Scrollable if content exceeds the viewport */
+            position: fixed; /* Make the navbar fixed */
+            top: 0; /* Position at the top */
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        nav a:hover {
+            background: #007BFF;
+        }
+        header {
+            background: #007BFF;
+            padding: 10px 20px;
+            text-align: center;
+            position: static; /* Change to static */
+            z-index: 999; /* Ensure it stays above other content */
+        }
+        header h1 {
+            color: #fff; /* Text color set to white */
+            margin: 0; /* Remove default margin */
+        }
+        .content {
+            margin-left: 270px; /* Adjusted for fixed nav */
+            padding: 20px; /* General padding for content */
+            padding-top: 10px; /* Adjusted top padding for header visibility */
+        }
+        h2, h3 {
+            color: #007BFF;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            padding: 5px 0;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #343a40;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <h2>Table of Contents</h2>
+    <ul>
+        <li><a href="#header-information">1. Header Information</a></li>
+        <li><a href="#hardware-specifications">2. Hardware Specifications</a></li>
+        <li><a href="#functional-description">3. Functional Description</a></li>
+        <li><a href="#security-considerations">4. Security Considerations</a></li>
+        <li><a href="#usage-instructions">5. Usage Instructions</a></li>
+        <li><a href="#error-handling">6. Error Handling</a></li>
+        <li><a href="#maintenance-log">7. Maintenance Log</a></li>
+
+    </ul>
+</nav>
+
+<header>
+    <h1>Python Program with Caesar Cipher Documentation</h1>
+</header>
+
+<div class="content">
+    <section id="header-information">
+        <h2><i class="fas fa-info-circle"></i>1. Header Information</h2>
+        <p><strong>Program Name:</strong> Python Program with Caesar Cipher and Shift Value Algorithms<br />
+           <strong>Author:</strong> Ryan Miguel Paraon &amp; Jaysonnel Jimenez<br />
+           <strong>Date Creation:</strong> 24/09/2024, 10:00 PM<br />
+           <strong>Last Modified:</strong> 3:03 AM<br />
+           <strong>Current Version:</strong> 3<br />
+           <strong>Purpose:</strong> The Python program implements a Caesar Cipher algorithm,
+           an encryption method that involves shifting the letters of the alphabet by a fixed
+           number of places.
+        </p>
+    </section>
+
+    <section id="hardware-specifications">
+        <h2><i class="fas fa-cogs"></i>2. Hardware Specifications</h2>
+        <p><strong>CPU:</strong> Dual-core processor, 2.0 GHz or higher.<br />
+           <strong>RAM:</strong> 3 GB minimum.<br />
+           <strong>Storage:</strong> 100 MB free space.
+        </p>
+        <p><strong>Software Requirements:</strong></p>
+        <ul>
+            <li><strong>Operating System:</strong>
+                <ul>
+                    <li>Windows 7 or higher</li>
+                    <li>macOS 10.12 (Sierra) or higher</li>
+                    <li>Linux (Any modern Linux distribution, e.g., Ubuntu, Fedora)</li>
+                </ul>
+            </li>
+            <li><strong>Python Version:</strong> Python 3.8 or higher.</li>
+            <li><strong>Required Libraries:</strong>
+                <ul>
+                    <li>Flask (Install with: <code>pip install flask</code>)</li>
+                    <li>Jinja2 (bundled with Flask)</li>
+                </ul>
+            </li>
+            <li><strong>Recommended Development Environment:</strong> PyCharm for Python IDE support.</li>
+        </ul>
+    </section>
+
+    <section id="functional-description">
+    <h2><i class="fas fa-tasks"></i>3. Functional Description</h2>
+    <p><strong>Expected Input:</strong></p>
+    <ul>
+        <li><strong>Plaintext:</strong> Alphabetic characters (A-Z). No numerical or special characters.</li>
+        <li><strong>Shift:</strong> Numerical characters (0-26). No alphabetic or special characters.</li>
+        <li><strong>Direction:</strong> A boolean value. If the user inputs 'forward', it returns true; if 'backward', it returns false.</li>
+    </ul>
+
+    <p><strong>Processing:</strong></p>
+    <ul>
+        <li>Gather inputs (plaintext, shift, and shift direction) from the user.</li>
+        <li>Validate user input (If valid, proceed to the next step. If not, prompt the user to input valid data).</li>
+        <li>Temporarily store the inputs from the user.</li>
+        <li>Start the encryption process using the stored inputs.</li>
+        <li>Display the encrypted message.</li>
+    </ul>
+
+    <p><strong>Output:</strong></p>
+    <p>The encrypted message is displayed on the same webpage (localhost) below the input text boxes, along with the unencrypted message.</p>
+</section>
+
+
+    <section id="security-considerations" style="margin: 20px; font-family: Arial, sans-serif;">
+    <h2 style="font-size: 24px; margin-bottom: 15px; color: #007BFF;">
+        <i class="fas fa-lock"></i> 4. Security Considerations
+    </h2>
+
+    <h3 style="font-size: 20px; margin-bottom: 10px; color: #555;">Vulnerability Assessment</h3>
+    <p style="line-height: 1.6;">
+        In any web application, it’s crucial to identify potential security risks. For the Caesar Cipher program, the following vulnerabilities may be present:
+    </p>
+    <ul style="line-height: 1.6;">
+        <li><strong>Input Validation Vulnerabilities:</strong> The application accepts user input for plaintext, shift value, and direction. If not properly validated, this may lead to unexpected behavior or security risks, such as code injection or denial of service.</li>
+        <li><strong>Cross-Site Scripting (XSS):</strong> If user input is rendered without adequate sanitization, malicious users may inject scripts that could execute in the context of another user’s browser session.</li>
+        <li><strong>Server Misconfiguration:</strong> Running the Flask development server in production exposes the application to various risks, such as exposing sensitive information or providing unnecessary access to system resources.</li>
+    </ul>
+
+    <h3 style="font-size: 20px; margin-bottom: 10px; color: #555;">Mitigation Strategies</h3>
+    <p style="line-height: 1.6;">
+        To address the identified vulnerabilities, the following measures should be implemented:
+    </p>
+    <ul style="line-height: 1.6;">
+        <li><strong>Input Validation:</strong> Ensure that all user inputs are validated thoroughly. For instance:
+            <ul>
+                <li>Plaintext must only consist of alphabetic characters (A-Z).</li>
+                <li>Shift values must be restricted to numerical characters between 0 and 26.</li>
+                <li>Implement error handling to manage invalid inputs effectively and prompt users for correction.</li>
+            </ul>
+        </li>
+        <li><strong>Sanitization:</strong> Use Flask's built-in tools to escape user inputs before rendering them in the HTML template. This helps prevent XSS attacks.</li>
+        <li><strong>Use of a Production Server:</strong> When deploying the application, utilize a production-ready WSGI server (such as Gunicorn or uWSGI) instead of the built-in Flask server to minimize risks associated with server misconfiguration.</li>
+        <li><strong>Environment Variables:</strong> Store sensitive configurations (e.g., secret keys) in environment variables rather than hardcoding them into the application.</li>
+    </ul>
+
+    <h3 style="font-size: 20px; margin-bottom: 10px; color: #555;">Testing</h3>
+    <p style="line-height: 1.6;">
+        To verify the security measures implemented, the following testing procedures should be conducted:
+    </p>
+    <ul style="line-height: 1.6;">
+        <li><strong>Unit Testing:</strong> Write unit tests for input validation functions to ensure they correctly handle valid and invalid inputs.</li>
+        <li><strong>Penetration Testing:</strong> Conduct penetration testing to simulate potential attacks (e.g., XSS, SQL injection) and identify weaknesses in the application’s security.</li>
+        <li><strong>Static Code Analysis:</strong> Utilize tools like Bandit or PyLint to analyze the codebase for common security vulnerabilities and best practices.</li>
+        <li><strong>Code Reviews:</strong> Perform peer code reviews focusing on security aspects to catch potential vulnerabilities before deployment.</li>
+    </ul>
+</section>
+
+    <section id="usage-instructions">
+        <h2><i class="fas fa-user-cog"></i>5. Usage Instructions</h2>
+        <ul>
+            <li>Install Python from the official site: <a href="https://python.org">https://python.org</a></li>
+            <li>Install Flask:
+                <pre><code>pip install flask</code></pre>
+            </li>
+            <li>(Optional) Set up a virtual environment:
+                <pre><code>python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate  # On Windows</code></pre>
+            </li>
+            <li>Navigate to the script directory.</li>
+            <li>Activate the virtual environment (if created).</li>
+            <li>Run the Flask application:
+                <pre><code>python app.py</code></pre>
+            </li>
+            <li>Open a web browser and go to <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</li>
+            <li>Enter the plaintext, shift value, and select the direction.</li>
+            <li>Click on the submit button to see the result.</li>
+        </ul>
+    </section>
+
+    <section id="error-handling">
+     <h2><i class="fas fa-exclamation-triangle"></i>6. Error Handling</h2>
+    <p><strong>User Input Validation:</strong></p>
+    <p>If the user inputs unexpected or unwanted characters, submission of the inputs will be denied, and the system will prompt the user for valid inputs.</p>
+
+    <p><strong>Flask:</strong></p>
+    <p>If Flask is not installed on the device, errors may occur. To resolve this, open Command Prompt as an administrator and type:</p>
+    <pre><code>pip install flask</code></pre>
+
+    <p><strong>Running in CMD:</strong></p>
+    <p>To avoid errors, make sure CMD is run as administrator. If issues persist, try opening the file in a virtual environment. To create a virtual environment, use the following command:</p>
+    <pre><code>python3 -m venv venv</code></pre>
+    <p>After that, activate the virtual environment:</p>
+    <pre><code>source venv/bin/activate</code></pre>
+
+    <p>If you encounter the error: <em>"python: can't open file 'D:\\Ryan Miguel's Academic Related Files\\... Paraon': [Errno 2] No such file or directory"</em>, try placing quotation marks around the file name, like so:</p>
+    <pre><code>python "Paraon&Jimenez_PrelimExam_IAS-Lab"</code></pre>
+</section>
+
+
+  <section id="maintenance-log" style="margin: 20px; font-family: Arial, sans-serif;">
+    <h2 style="font-size: 24px; margin-bottom: 15px; color: #333;">
+        <i class="fas fa-wrench"></i>7. Maintenance Log
+    </h2>
+
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <thead style="background-color: #007BFF; color: white;">
+            <tr>
+                <th style="padding: 12px 15px; text-align: left;">Date</th>
+                <th style="padding: 12px 15px; text-align: left;">Task</th>
+                <th style="padding: 12px 15px; text-align: left;">Responsible</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 22:00</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Implemented basic Caesar Cipher algorithm</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-22 22:43</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Functions ‘get_valid_plaintext’ and ‘get_valid_shift’ created</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-22 22:59</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Error handlings inside ‘get_valid_plaintext’ function created to ensure valid inputs</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-22 23:21</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Error handlings inside ‘get_valid_shift’ function created to ensure valid inputs</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-22 23:50</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Function ‘main’ created and reimplemented Caesar Cipher algorithm</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 00:15</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Added case sensitivity handlers</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 00:41</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Added additional function, ‘get_shift_direction’</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 01:20</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Implemented options for retrying the encryption/decryption or exit</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 01:29</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Error handlings inside ‘get_valid_direction’ function created</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 01:33</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Added comments to improve readability</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 02:00</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Revised output prompts' grammar</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 02:37</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Reconstructed error handlings inside ‘get_valid_direction’ function</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-23 03:03</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Improved space and time complexity</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Jaysonnel Jimenez</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-24 01:39</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Implemented HTML syntax to run program on localhost</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-24 01:39</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Imported Flask, a web framework for Python</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">2024-09-24 02:39</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Added CSS (assistance from ChatGPT)</td>
+                <td style="padding: 12px 15px; border-bottom: 1px solid #ddd;">Ryan Miguel Paraon</td>
+            </tr>
+            <tr>
+                <td colspan="3" style="border: none; padding: 0;">
+                    <hr style="border: none; border-top: 1px solid #ddd; margin: 0;">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 12px 15px;">2024-09-24 04:21</td>
+                <td style="padding: 12px 15px;">Finalized the code</td>
+                <td style="padding: 12px 15px;">Ryan Miguel Paraon</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+
+
+
+
+
+
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Ryan Miguel Paraon &amp; Jaysonnel Jimenez. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
